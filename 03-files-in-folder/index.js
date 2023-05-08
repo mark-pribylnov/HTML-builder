@@ -4,7 +4,6 @@ const path = require("path");
 
 async function getFileNames(folderPath) {
   const files = await fsPromises.readdir(folderPath, { withFileTypes: true });
-  console.log(files);
   for (let i = 0; i < files.length; i++) {
     if (files[i].isDirectory()) {
       files.splice(i, 1);
