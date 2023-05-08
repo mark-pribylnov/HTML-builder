@@ -1,7 +1,6 @@
 const fsPromises = require("fs/promises");
 const fs = require("fs");
 const path = require("path");
-const output = fs.createWriteStream(path.join(__dirname, "project-dist", "bundle.css"));
 
 async function findCssFiles() {
   const initialFiles = await fsPromises.readdir(path.join(__dirname, "styles"), {
@@ -52,6 +51,7 @@ async function findCssFiles() {
   // }
 }
 findCssFiles();
+
 // copy();
 
 // call the function and pass the folder path
